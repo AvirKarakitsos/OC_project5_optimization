@@ -106,13 +106,13 @@ body {
 	border-radius:0 ;
 } */
 .active-tag {
-	color: #fff !important;
+	/* color: #fff !important; */
 	background-color: #BEB45A !important;
 	border-radius:0 !important;
 	cursor: default;
 }
 .nav-pills .nav-link {
-	color: #000;
+	color: #000 !important;
 	cursor: default;
 }
 .item-column {
