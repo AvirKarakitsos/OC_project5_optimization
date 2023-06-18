@@ -167,8 +167,38 @@
 				</div>
 			</div>
 		</section>
-
 	</main>
+	<footer>
+		<!-- <div itemscope itemtype="https://schema.org/LocalBusiness">
+					<div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+						<p>Adresse:
+							<span itemprop="streetAddress">68 avenue Alsace-Lorraine</span>,  
+							<span itemprop="postalCode">33200</span>,
+							<span itemprop="addressLocality">Bordeaux, France</span></p>
+						<p>Tel:<span itemprop="telephone">( 33 5) 56 67 78 89 </span></p>
+					</div>
+					<p>Je réponds au téléphone du <span itemprop="openingHours" content="Mo,Tu,We,Th,Fr 10:00-19:00">lundi au vendredi de 10 h à 19 h</span></p>
+				</div> -->
+				<div itemscope itemtype="https://schema.org/PostalAddress">
+					<div>
+						<p>Adresse:
+							<span itemprop="streetAddress">68 avenue Alsace-Lorraine</span>,  
+							<span itemprop="postalCode">33200</span>,
+							<span itemprop="addressLocality">Bordeaux, France</span></p>
+						<p>Tel:<span itemprop="telephone">( 33 5) 56 67 78 89 </span></p>
+					</div>
+					<div itemprop="hoursAvailable" itemscope itemtype="https://schema.org/OpeningHoursSpecification">
+						du lundi au vendredi de
+							<link itemprop="dayOfWeek" href="https://schema.org/Monday">
+							<link itemprop="dayOfWeek" href="https://schema.org/Tuesday">
+							<link itemprop="dayOfWeek" href="https://schema.org/Wednesday">
+							<link itemprop="dayOfWeek" href="https://schema.org/Thursday">
+							<link itemprop="dayOfWeek" href="https://schema.org/Friday">
+							<time itemprop="opens" content="10:00:00"> 10:00 h</time> à
+							<time itemprop="closes" content="19:00:00"> 19:00 h</time>
+					</div>
+				</div>
+	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="./assets/bootstrap/bootstrap.bundle.js"></script>
