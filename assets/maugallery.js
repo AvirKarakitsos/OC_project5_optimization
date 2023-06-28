@@ -221,10 +221,10 @@
     },
     showItemTags(gallery, position, tags) {
       var tagItems =
-        '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all"><a href="#gallery">Tous</a></span></li>';
+        '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all"><a href="#gallery" aria-label="catégorie tous">Tous</a></span></li>';
       $.each(tags, function(index, value) {
         tagItems += `<li class="nav-item active">
-                <span class="nav-link"  data-images-toggle="${value}"><a href="#galerry">${value}</a></span></li>`;
+                <span class="nav-link"  data-images-toggle="${value}"><a href="#galerry" aria-label="catégorie ${value}">${value}</a></span></li>`;
       });
       var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
 
