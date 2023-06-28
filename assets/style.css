@@ -51,6 +51,11 @@ body {
 	width: 20px;
 }
 
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	background-color: #1C6474;
+	border-radius: 50%;
+}
+
 #about {
 	display: flex;
 	background-color: #F6D2B8;
@@ -271,6 +276,11 @@ form textarea {
 	font-size: 1.2em;
 	margin-bottom: 20px;
 }
+
+form input:focus, form textarea:focus {
+	outline: solid #9B3D0D;
+}
+
 input[type="submit"] {
 	background-color: #BEB45A;
 	padding: .5em 1em
