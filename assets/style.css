@@ -159,6 +159,9 @@ body {
 	display: flex;
 	font-size: 24px;
 }
+.mg-prev button, .mg-next button{
+	border: 0;
+}
 
 .quote {
 	font-family: 'Spectral';
