@@ -79,7 +79,7 @@
     wrapItemInColumn(element, columns) {
       if (columns.constructor === Number) {
         element.wrap(
-          `<div class='item-column mb-4 col-${Math.ceil(12 / columns)}'></div>`
+          `<a href="#" class='item-column mb-4 col-${Math.ceil(12 / columns)}'></a>`
         );
       } else if (columns.constructor === Object) {
         var columnClasses = "";
@@ -98,7 +98,7 @@
         if (columns.xl) {
           columnClasses += ` col-xl-${Math.ceil(12 / columns.xl)}`;
         }
-        element.wrap(`<div class='item-column mb-4${columnClasses}'></div>`);
+        element.wrap(`<a href="#" class='item-column mb-4${columnClasses}'></a>`);
       } else {
         console.error(
           `Columns should be defined as numbers or objects. ${typeof columns} is not supported.`
@@ -221,10 +221,10 @@
     },
     showItemTags(gallery, position, tags) {
       var tagItems =
-        '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all">Tous</span></li>';
+        '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all"><a href="#gallery">Tous</a></span></li>';
       $.each(tags, function(index, value) {
         tagItems += `<li class="nav-item active">
-                <span class="nav-link"  data-images-toggle="${value}">${value}</span></li>`;
+                <span class="nav-link"  data-images-toggle="${value}"><a href="#galerry">${value}</a></span></li>`;
       });
       var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
 

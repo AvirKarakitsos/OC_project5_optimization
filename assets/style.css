@@ -80,7 +80,11 @@ body {
 	width: 100%;
 
 }
+#about {
+	min-height: 700px;
+}
 #about-me {
+	min-height: 500px;
 	flex: 2
 }
 .about-me__title {
@@ -115,6 +119,9 @@ body {
 	background-color: #BEB45A;
 	border-radius:0 ;
 } */
+.nav-item a, .gallery-items-row a{
+	display: block;
+}
 .active-tag {
 	/* color: #fff !important; */
 	background-color: #BEB45A !important;
