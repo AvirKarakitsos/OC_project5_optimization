@@ -370,10 +370,12 @@ footer {
 
 @media all and (max-width: 650px) {
 	.top-header {
+		min-height: 150px;
 		flex-direction: column;
 		padding-inline: 0;
 	}
 	.top-header .nav, .top-header .nav ul {
+		min-height: 50px;
 		width: 100%;
 		padding: 0 0 0 0;
 	}
@@ -381,6 +383,9 @@ footer {
 		flex: 1;
 		padding-block: 1em;
 		text-align: center;
+	}
+	.carousel-item {
+		min-height: 148px;
 	}
 	.picture.left::before, .picture.right::before {
 		height: 150px;
