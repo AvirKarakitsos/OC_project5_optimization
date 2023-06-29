@@ -384,8 +384,14 @@ footer {
 		padding-block: 1em;
 		text-align: center;
 	}
-	.carousel-item {
+	.carousel-item, .carousel-inner {
 		min-height: 148px;
+	}
+	#about {
+		min-height: 840px;
+	}
+	.about-me__introduction {
+		min-height: 120px;
 	}
 	.picture.left::before, .picture.right::before {
 		height: 150px;
@@ -404,6 +410,7 @@ footer {
 		width: 100%;
 	}
 	.picture {
+		min-height: 200px;
 		width: 80%;
 	}
 }
