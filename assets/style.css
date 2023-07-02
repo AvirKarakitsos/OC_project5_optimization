@@ -83,7 +83,6 @@ body {
 
 .picture img {
 	width: 100%;
-
 }
 
 #about {
@@ -142,7 +141,6 @@ body {
 	content: "";
 	display: block;
 	padding-bottom: 100%;
-
 }
 
 .gallery-item {
@@ -253,7 +251,6 @@ body {
 
 .form-container {
 	flex : 2;
-
 }
 
 form {
@@ -316,7 +313,6 @@ footer {
 @media all and (max-width: 1000px) {
 	#about{
 		flex-direction: column;
-
 	}
 	.picture {
 		width: 50%;
