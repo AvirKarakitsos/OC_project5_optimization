@@ -396,7 +396,7 @@ footer {
 		text-align: center;
 	}
 	.carousel-item.active, .carousel-inner {
-		min-height: 196px;
+		min-height: 190px;
 	}
 	#about {
 		min-height: 840px;
