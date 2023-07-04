@@ -166,18 +166,37 @@ body {
 	object-fit: cover;
 	padding: .5em;
 }
-
-.mg-prev, .mg-next {
-	width: 30px;
-	height: 30px;
-	border-radius: 00%;
+.show {
+	display: flex !important;
 	justify-content: center;
 	align-items: center;
-	display: flex;
-	font-size: 24px;
 }
-
-.mg-prev button, .mg-next button{
+.modal-body {
+	width: 500px;
+    display: flex;
+    justify-content: center;
+}
+.mg {
+	width: 30px;
+	height: 30px;
+	position:absolute;
+	top:50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+	border-radius: 00%;
+	cursor:pointer;
+	background:white;
+}
+.mg-prev {
+	left:-15px;
+}
+.mg-next {
+	right:-15px
+}
+.mg button{
+	font-weight: bold;
 	border: 0;
 }
 
@@ -397,6 +416,10 @@ footer {
 		flex: 1;
 		padding-block: 1em;
 		text-align: center;
+	}
+	.modal-body {
+		width: calc(100vw - 25px);
+		max-width: 450px;
 	}
 	#about {
 		min-height: 840px;
