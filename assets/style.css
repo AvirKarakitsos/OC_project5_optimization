@@ -6,9 +6,9 @@
 	font-style: normal;
 }
 
-html { 
+/* html { 
 	overflow-y: scroll;
-}
+} */
 
 body {
 	max-width: 1920px;
@@ -63,7 +63,10 @@ body {
 	background-color: #1C6474;
 	border-radius: 50%;
 }
-
+.carousel-item.active, .carousel-inner {
+	width: 100%;
+	aspect-ratio: 80 / 37;
+}
 #about {
 	display: flex;
 	background-color: #F6D2B8;
@@ -394,9 +397,6 @@ footer {
 		flex: 1;
 		padding-block: 1em;
 		text-align: center;
-	}
-	.carousel-item.active, .carousel-inner {
-		min-height: 190px;
 	}
 	#about {
 		min-height: 840px;
