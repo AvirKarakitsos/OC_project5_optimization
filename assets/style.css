@@ -61,7 +61,7 @@ body {
 }
 .carousel-item.active, .carousel-inner {
 	width: 100%;
-	aspect-ratio: 80 / 37;
+	aspect-ratio: 425 / 196;
 }
 #about {
 	display: flex;
