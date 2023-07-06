@@ -70,6 +70,10 @@ body {
 .carousel-btn {
 	height: 30px;
 	width: 30px;
+	margin-right: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	border: 0;
 	border-radius: 50%;
 	background-color: #1C647466;
@@ -88,6 +92,7 @@ body {
 	display: none;
 }
 .carousel-btn .fa-pause, .carousel-btn .fa-play {
+	font-size: 18px;
 	color: #fff;
 }
 
