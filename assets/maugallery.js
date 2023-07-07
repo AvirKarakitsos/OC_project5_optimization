@@ -244,7 +244,10 @@
         tagItems += `<li class="nav-item active">
                 <span class="nav-link"  data-images-toggle="${value}"><a href="#gallery" aria-label="catégorie ${value}">${value}</a></span></li>`;
       });
-      var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
+      var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">
+                        <li><button class="gallery-btn" aria-label="afficher la galerie"><i class="fa-solid fa-expand" aria-hidden="true"></i></button></li>
+                        ${tagItems}
+                      </ul>`;
 
       if (position === "bottom") {
         gallery.append(tagsRow);

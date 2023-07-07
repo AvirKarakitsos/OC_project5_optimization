@@ -35,7 +35,7 @@ body {
 .nav ul {
 	display: flex;
 	list-style-type: none;
-	font-size: 14px;
+	font-size: 15px;
 	margin-bottom: 0;
 }
 
@@ -149,22 +149,16 @@ body {
 }
 
 .title{
-	width: 300px;
 	margin: 0 auto;
-	position: relative;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	padding-block: 2em;
 }
 
 .gallery-btn {
-	position: absolute;
-	margin-bottom: 0.5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	right: 50px;
 	border: 0;
 	background-color: #fff;
 }
@@ -174,11 +168,12 @@ body {
 }
 
 .fa-expand {
-	font-size: 25px;
+	font-size: 22px;
 }
 
 .gallery .nav {
 	justify-content: center;
+	align-items: center;
 }
 
 .nav-pills .nav-link.active, .nav-pills .nav-link.active-tag {
