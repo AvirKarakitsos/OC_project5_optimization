@@ -12,6 +12,7 @@ body {
 }
 
 .top-header {
+	height: 100px;
 	background-color: white;
 	position: sticky;
 	top:0;
@@ -27,8 +28,8 @@ body {
 	font-size: 26px;
 }
 
-.nav {
-	min-height: 22px;
+.top-header .nav {
+	height: 22px;
 }
 
 .nav ul {
@@ -52,7 +53,7 @@ body {
 }
 
 .carousel-indicators {
-	min-height: 23px;
+	height: 30px;
 	display: flex;
 	align-items: center;
 }
@@ -124,12 +125,7 @@ body {
 	width: 100%;
 }
 
-#about {
-	min-height: 700px;
-}
-
 #about-me {
-	min-height: 500px;
 	flex: 2
 }
 
@@ -375,7 +371,7 @@ footer {
 	text-align: center;
 }
 
-@media all and (max-width: 1180px) {
+@media (max-width: 1180px) {
 	.picture {
 		flex : 2;
 	}
@@ -394,7 +390,7 @@ footer {
 	}
 }
 
-@media all and (max-width: 1000px) {
+@media (max-width: 1000px) {
 	#about{
 		flex-direction: column;
 	}
@@ -451,13 +447,14 @@ footer {
 	}
 }
 
-@media all and (max-width: 650px) {
+@media (max-width: 650px) {
 	.top-header {
-		min-height: 150px;
+		height: 135px;
 		flex-direction: column;
 		padding-inline: 0;
 	}
 	.top-header .nav, .top-header .nav ul {
+		height: 50px;
 		width: 100%;
 		padding: 0 0 0 0;
 	}
@@ -469,12 +466,6 @@ footer {
 	.modal-body {
 		width: calc(100vw - 25px);
 		max-width: 450px;
-	}
-	#about {
-		min-height: 840px;
-	}
-	.about-me__introduction {
-		min-height: 120px;
 	}
 	.about__block, .picture.right::before {
 		height: 150px;
@@ -493,7 +484,6 @@ footer {
 		width: 100%;
 	}
 	.picture {
-		min-height: 200px;
 		width: 80%;
 	}
 }
