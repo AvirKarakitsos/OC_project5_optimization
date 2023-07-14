@@ -11,6 +11,7 @@ body {
 	margin: auto;
 }
 
+/**** Header ****/
 .top-header {
 	height: 100px;
 	background-color: white;
@@ -52,6 +53,8 @@ body {
 	width: 20px;
 }
 
+/**** Main ****/
+/** Slide **/
 .carousel-indicators {
 	height: 30px;
 	display: flex;
@@ -97,6 +100,7 @@ body {
 	color: #fff;
 }
 
+/** About **/
 #about {
 	display: flex;
 	background-color: #F6D2B8;
@@ -148,6 +152,7 @@ body {
 	font-size: 14px;
 }
 
+/** Gallery **/
 .title{
 	margin: 0 auto;
 	display: flex;
@@ -193,6 +198,7 @@ body {
 	padding-bottom: 100%;
 }
 
+/* Modal */
 .gallery-item {
 	position: absolute;
 	width: 100%;
@@ -240,6 +246,7 @@ body {
 	border: 0;
 }
 
+/** Quote **/
 .quote {
 	font-family: 'Spectral', sans-serif;
 	font-style: italic;
@@ -262,6 +269,7 @@ body {
 	font-size: 22px;
 }
 
+/** Services **/
 #services {
 	margin: auto;
 	background-color: #A8D5D8 ;
@@ -301,6 +309,7 @@ body {
 	font-size: calc(1.275rem + 0.3vw);
 }
 
+/** Contact **/
 #contact {
 	margin: auto;
 	background-color: #D8D3A8 ;
@@ -366,6 +375,7 @@ footer {
 	text-align: center;
 }
 
+/**** Media queries: 1180px - 1000px 650px ****/
 @media (max-width: 1180px) {
 	.picture {
 		flex : 2;
