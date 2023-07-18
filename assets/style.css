@@ -148,6 +148,9 @@ body {
 }
 
 /** Gallery **/
+#gallery .container{
+	position: relative;
+}
 .title{
 	margin: 0 auto;
 	display: flex;
@@ -155,7 +158,16 @@ body {
 	padding-block: 2em;
 }
 .gallery {
-	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 25px;
+}
+.gallery img {
+	width: 100%;
+	max-width: 380px;
+	aspect-ratio: 1 / 1;
+	display: block;
+	object-fit: cover;
 }
 .gallery-btn {
 	position: absolute;
@@ -180,6 +192,11 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+.nav-pills {
+	margin: 25px 0;
+	display: flex;
+	justify-content: center;
+}
 
 .nav-pills .nav-link.active, .nav-pills .nav-link.active-tag {
 	background-color: #BEB45A;
@@ -199,13 +216,13 @@ body {
 }
 
 /* Modal */
-.gallery-item {
+/* .gallery-item {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	padding: .5em;
-}
+} */
 
 .show {
 	display: flex !important;

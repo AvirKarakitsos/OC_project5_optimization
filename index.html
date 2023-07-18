@@ -38,7 +38,7 @@
 	<meta name="twitter:title" content="Nina Carducci | Photographe professionnelle">
 	<meta name="twitter:description" content="Retrouvez sur mon site mes photos lors d'événements comme des concerts ou des mariages. Je réalise également des portraits, artistes ou modèles.">
 	
-	<script defer src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<!-- <script defer src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
 	<script defer src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
 	<script defer src="https://kit.fontawesome.com/e53f4fb6f8.js" crossorigin="anonymous"></script>
 
@@ -58,7 +58,7 @@
 	href="./assets/images/nina.png 460w">
 
 	<script defer src="./assets/scripts.js"></script>
-	<script defer src="./assets/maugallery.js"></script>
+	<!-- <script defer src="./assets/maugallery.js"></script> -->
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 
@@ -141,17 +141,24 @@
 		<section id="gallery" aria-label="galerie">
 			<h2 class="title">Portfolio</h2>
 			<div class="container py-3">
-				<div class="gallery" style="display: none">
-					<button class="gallery-btn" aria-label="afficher la galerie"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
-					<img height="380" width="380" data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.jpg" alt="photo prise lors d'un concert" loading="lazy">
-					<img height="380" width="380" data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.jpg" alt="photo d'un entrepreneur" loading="lazy">
-					<img height="380" width="380" data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.jpg" alt="photo prise lors d'un meeting" loading="lazy">
-					<img height="380" width="380" data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.jpg" alt="photo de mariés se donnant la main" loading="lazy">
-					<img height="380" width="380" data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.jpg" alt="photo d'un artiste" loading="lazy">
-					<img height="380" width="380" data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.jpg" alt="photo de mariés marchant sur la plage" loading="lazy">
-					<img height="380" width="380" data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.jpg" alt="photo d'un modèle" loading="lazy">
-					<img height="380" width="380" data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.jpg" alt="photo prise lors d'un concert" loading="lazy">
-					<img height="380" width="380" data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.jpg" alt="photo d'une femme souriante devant son ordinateur" loading="lazy">
+				<ul class="my-4 tags-bar nav nav-pills">
+					<li class="nav-item">
+						<span class="nav-link active"  data-images-toggle="all">
+							<a href="#gallery" aria-label="catégorie tous">Tous</a>
+						</span>
+					</li>
+				</ul>
+				<button class="gallery-btn" aria-label="afficher la galerie"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
+				<div class="gallery">
+					<img width="380" data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.jpg" alt="photo d'un entrepreneur" loading="lazy">
+					<img width="380" data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.jpg" alt="photo prise lors d'un meeting" loading="lazy">
+					<img width="380" data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.jpg" alt="photo de mariés se donnant la main" loading="lazy">
+					<img width="380" data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.jpg" alt="photo d'un artiste" loading="lazy">
+					<img width="380" data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.jpg" alt="photo prise lors d'un concert" loading="lazy">
+					<img width="380" data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.jpg" alt="photo de mariés marchant sur la plage" loading="lazy">
+					<img width="380" data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.jpg" alt="photo d'un modèle" loading="lazy">
+					<img width="380" data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.jpg" alt="photo prise lors d'un concert" loading="lazy">
+					<img width="380" data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.jpg" alt="photo d'une femme souriante devant son ordinateur" loading="lazy">
 				</div>
 			</div>
 			<figure class="quote">
