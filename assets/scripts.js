@@ -57,6 +57,8 @@ const data = [
 
 const categories = ["Concert","Entreprises","Mariages","Portrait"]
 const list = document.querySelector(".nav-pills")
+const modal = document.getElementById("modal")
+const myDiv = document.querySelector('.modal-dialog')
 
 //Pause carousel
 document.querySelector(".carousel-btn.btn-pause").addEventListener("click", function() {
@@ -81,8 +83,8 @@ for(let category of categories) {
                         </li>`
 }
 
+//Click Event on filter categories
 document.querySelectorAll(".nav-item").forEach(element => {
-    
     element.addEventListener("click", function() {
         let child = element.children[0]
 
@@ -97,6 +99,23 @@ document.querySelectorAll(".nav-item").forEach(element => {
         child.classList.add("active")
     })
 })
+
+//Open the modal
+document.querySelectorAll('.gallery-item').forEach((image)=>{
+    image.addEventListener("click",function(){
+        modal.style.display = "flex"
+        document.querySelector(".modal-body").innerHTML = `<div class="mg mg-prev">
+                                                                <button aria-label="précédent"><</button>
+                                                            </div>
+                                                            <img class="lightboxImage img-fluid" src=${image.src} alt="${image.alt}"/>
+                                                            <div class="mg mg-next">
+                                                                <button aria-label="suivant">></button>
+                                                            </div>`
+    })
+})
+
+modal.addEventListener('mousedown', () => modal.style.display = "none")
+myDiv.addEventListener('mousedown', (event) => event.stopPropagation())
 
 //Add one element to the DOM
 function addOneElement(element){
