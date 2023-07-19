@@ -59,7 +59,7 @@ const categories = ["Concert","Entreprises","Mariages","Portrait"]
 const list = document.querySelector(".nav-pills")
 const modal = document.getElementById("modal")
 const myDiv = document.querySelector('.modal-dialog')
-let categorySelected
+let categorySelected = "all"
 
 //Pause carousel
 // document.querySelector(".carousel-btn.btn-pause").addEventListener("click", function() {
@@ -105,22 +105,58 @@ document.querySelectorAll(".nav-item").forEach(element => {
 
 //Open the modal with images in HTML
 document.querySelectorAll('.gallery-item').forEach((image)=>{
-    image.addEventListener("click",function() {
-        modal.style.display = "flex"
-        document.querySelector(".modal-body").innerHTML += `
-                                                            <div class="mg mg-prev">
-                                                                <button onclick="prevImage()" aria-label="précédent"><</button>
-                                                            </div>
-                                                            <img class="lightboxImage img-fluid" data-id=${image.dataset.id} data-gallery-tag=${image.dataset.galleryTag} src=${image.src} alt="${image.alt}"/>
-                                                            <div class="mg mg-next">
-                                                                <button onclick="nextImage()" aria-label="suivant">></button>
-                                                            </div>`
+    image.addEventListener("click",function(e) {
+        openModal(e.target)
     })
 })
+
+//Open the modal with the full screen button
+document.querySelector(".gallery-btn").addEventListener("click",function(){
+    let dataFilter
+    let img = document.createElement("img")
+
+    if (categorySelected !== "all") {
+        dataFilter = data.filter(value => value.tag === categorySelected)
+    } else {
+        dataFilter = data
+    }
+ 
+    img.src = dataFilter[0].src
+    img.alt = dataFilter[0].alt
+    img.dataset.id = dataFilter[0].id
+    img.dataset.galleryTag = dataFilter[0].tag
+    openModal(img)
+})
+
 //Close the modal
 modal.addEventListener('mousedown', () => modal.style.display = "none")
 myDiv.addEventListener('mousedown', (event) => event.stopPropagation())
 
+//Close the modal with keyboard
+window.addEventListener("keydown",function(e){
+    if(e.key === "Escape" || e.key ==="Esc") {
+        document.querySelector(".modal-body").innerHTML = ""
+        modal.style.display = "none"
+    }
+
+    if(e.key === "Tab" && modal.style.display === "flex" ) {
+        focusInModal(e)
+    }
+})
+
+//Focus Element in the modal with keyboard
+function focusInModal(e) {
+    e.preventDefault()
+    const elementFocus = Array.from(document.querySelectorAll('.btn-modal'))
+    let index = elementFocus.findIndex(value => value === modal.querySelector(":focus"))
+    index++
+    if(index >= elementFocus.length) {
+        index = 0
+    }
+    elementFocus[index].focus()
+}
+
+//Previous image in the modal
 function prevImage() {
     let actual = document.querySelector('.lightboxImage')
     let prev
@@ -128,7 +164,7 @@ function prevImage() {
     let index
     
     if (categorySelected !== "all") {
-        dataFilter = data.filter(value => value.tag === actual.dataset.galleryTag)
+        dataFilter = data.filter(value => value.tag === categorySelected)
     } else {
         dataFilter = data
     }
@@ -147,12 +183,13 @@ function prevImage() {
     actual.galleryTag = prev.galleryTag
 }
 
+//Next image in the modal
 function nextImage() {
     let actual = document.querySelector('.lightboxImage')
     let next
     let dataFilter = []
     let index
-    
+     
     if (categorySelected !== "all") {
         dataFilter = data.filter(value => value.tag === actual.dataset.galleryTag)
     } else {
@@ -166,7 +203,6 @@ function nextImage() {
     } else {
         next = dataFilter[index+1]
     }
-    
     actual.src = next.src
     actual.dataset.id = next.id
     actual.alt = next.alt
@@ -182,15 +218,8 @@ function addOneElement(element){
     img.alt = element.alt
     img.dataset.id = element.id
     img.dataset.galleryTag = element.tag
-    img.addEventListener("click",function() {
-        modal.style.display = "flex"
-        document.querySelector(".modal-body").innerHTML = `<div class="mg mg-prev">
-                                                                <button onclick="prevImage()" aria-label="précédent"><</button>
-                                                            </div>
-                                                            <img class="lightboxImage img-fluid" data-id=${this.dataset.id} data-gallery-tag=${this.dataset.galleryTag} src=${this.src} alt="${this.alt}"/>
-                                                            <div class="mg mg-next">
-                                                                <button onclick="nextImage()" aria-label="suivant">></button>
-                                                            </div>`
+    img.addEventListener("click",function(e) {
+        openModal(e.target)
     })
     
     gallery.appendChild(img)
@@ -205,4 +234,17 @@ function addElements(table){
     for(let element of table){
         addOneElement(element)
     }
+}
+
+//Open modal
+function openModal(image) {
+    modal.style.display = "flex"
+    document.querySelector(".modal-body").innerHTML = ""
+    document.querySelector(".modal-body").innerHTML = `<div class="mg mg-prev">
+                                                            <button class="btn-modal" onclick="prevImage()" aria-label="précédent"><</button>
+                                                        </div>
+                                                        <img class="lightboxImage img-fluid" data-id=${image.dataset.id} data-gallery-tag=${image.dataset.galleryTag} src=${image.src} alt="${image.alt}"/>
+                                                        <div class="mg mg-next">
+                                                            <button class="btn-modal" onclick="nextImage()" aria-label="suivant">></button>
+                                                        </div>`
 }
