@@ -2,7 +2,7 @@ const data = [
     {
         id: 0,
         src: "./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.jpg",
-        alt: "photo prise lors d'un meeting",
+        alt: "photo prise lors d\'un meeting",
         tag: "Entreprises" 
     },
     {
@@ -59,20 +59,21 @@ const categories = ["Concert","Entreprises","Mariages","Portrait"]
 const list = document.querySelector(".nav-pills")
 const modal = document.getElementById("modal")
 const myDiv = document.querySelector('.modal-dialog')
+let categorySelected
 
 //Pause carousel
-document.querySelector(".carousel-btn.btn-pause").addEventListener("click", function() {
-    $('.carousel').carousel("pause")
-    this.classList.add("btn-hidden")
-    document.querySelector(".carousel-btn.btn-play").classList.remove("btn-hidden")
-})
+// document.querySelector(".carousel-btn.btn-pause").addEventListener("click", function() {
+//     $('.carousel').carousel("pause")
+//     this.classList.add("btn-hidden")
+//     document.querySelector(".carousel-btn.btn-play").classList.remove("btn-hidden")
+// })
 
 //Active carousel
-document.querySelector(".carousel-btn.btn-play").addEventListener("click", function() {
-    $('.carousel').carousel("cycle")
-    this.classList.add("btn-hidden")
-    document.querySelector(".carousel-btn.btn-pause").classList.remove("btn-hidden")
-})
+// document.querySelector(".carousel-btn.btn-play").addEventListener("click", function() {
+//     $('.carousel').carousel("cycle")
+//     this.classList.add("btn-hidden")
+//     document.querySelector(".carousel-btn.btn-pause").classList.remove("btn-hidden")
+// })
 
 //Add list of categories
 for(let category of categories) {
@@ -91,8 +92,10 @@ document.querySelectorAll(".nav-item").forEach(element => {
         if (child.dataset.imagesToggle !== "all") {
             let dataFilter = data.filter(value => value.tag === child.dataset.imagesToggle)
             addElements(dataFilter)
+            categorySelected = child.dataset.imagesToggle
         } else {
             addElements(data)
+            categorySelected = "all"
         }
 
         document.querySelector(".nav-link.active").classList.remove("active")
@@ -100,22 +103,75 @@ document.querySelectorAll(".nav-item").forEach(element => {
     })
 })
 
-//Open the modal
+//Open the modal with images in HTML
 document.querySelectorAll('.gallery-item').forEach((image)=>{
-    image.addEventListener("click",function(){
+    image.addEventListener("click",function() {
         modal.style.display = "flex"
-        document.querySelector(".modal-body").innerHTML = `<div class="mg mg-prev">
-                                                                <button aria-label="précédent"><</button>
+        document.querySelector(".modal-body").innerHTML += `
+                                                            <div class="mg mg-prev">
+                                                                <button onclick="prevImage()" aria-label="précédent"><</button>
                                                             </div>
-                                                            <img class="lightboxImage img-fluid" src=${image.src} alt="${image.alt}"/>
+                                                            <img class="lightboxImage img-fluid" data-id=${image.dataset.id} data-gallery-tag=${image.dataset.galleryTag} src=${image.src} alt="${image.alt}"/>
                                                             <div class="mg mg-next">
-                                                                <button aria-label="suivant">></button>
+                                                                <button onclick="nextImage()" aria-label="suivant">></button>
                                                             </div>`
     })
 })
-
+//Close the modal
 modal.addEventListener('mousedown', () => modal.style.display = "none")
 myDiv.addEventListener('mousedown', (event) => event.stopPropagation())
+
+function prevImage() {
+    let actual = document.querySelector('.lightboxImage')
+    let prev
+    let dataFilter = []
+    let index
+    
+    if (categorySelected !== "all") {
+        dataFilter = data.filter(value => value.tag === actual.dataset.galleryTag)
+    } else {
+        dataFilter = data
+    }
+
+    index = dataFilter.findIndex(value => value.id === parseInt(actual.dataset.id))
+
+    if(index === 0) {
+        prev = dataFilter[dataFilter.length-1]
+    } else {
+        prev = dataFilter[index-1]
+    }
+   
+    actual.src = prev.src
+    actual.dataset.id = prev.id
+    actual.alt = prev.alt
+    actual.galleryTag = prev.galleryTag
+}
+
+function nextImage() {
+    let actual = document.querySelector('.lightboxImage')
+    let next
+    let dataFilter = []
+    let index
+    
+    if (categorySelected !== "all") {
+        dataFilter = data.filter(value => value.tag === actual.dataset.galleryTag)
+    } else {
+        dataFilter = data
+    }
+
+    index = dataFilter.findIndex(value => value.id === parseInt(actual.dataset.id))
+
+    if(index === dataFilter.length-1) {
+        next = dataFilter[0]
+    } else {
+        next = dataFilter[index+1]
+    }
+    
+    actual.src = next.src
+    actual.dataset.id = next.id
+    actual.alt = next.alt
+    actual.galleryTag = next.galleryTag
+}
 
 //Add one element to the DOM
 function addOneElement(element){
@@ -124,7 +180,18 @@ function addOneElement(element){
  
     img.src = element.src
     img.alt = element.alt
+    img.dataset.id = element.id
     img.dataset.galleryTag = element.tag
+    img.addEventListener("click",function() {
+        modal.style.display = "flex"
+        document.querySelector(".modal-body").innerHTML = `<div class="mg mg-prev">
+                                                                <button onclick="prevImage()" aria-label="précédent"><</button>
+                                                            </div>
+                                                            <img class="lightboxImage img-fluid" data-id=${this.dataset.id} data-gallery-tag=${this.dataset.galleryTag} src=${this.src} alt="${this.alt}"/>
+                                                            <div class="mg mg-next">
+                                                                <button onclick="nextImage()" aria-label="suivant">></button>
+                                                            </div>`
+    })
     
     gallery.appendChild(img)
 }
