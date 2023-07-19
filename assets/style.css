@@ -171,7 +171,7 @@ body {
 }
 .gallery-btn {
 	position: absolute;
-	top: 10px;
+	top: 50px;
 	left: 80%;
 	display: flex;
 	justify-content: center;
@@ -499,7 +499,7 @@ footer {
 		grid-template-columns: 1fr;
 	}
 	.gallery-btn {
-		top: 50px;
+		top: 90px;
 	}
 	.modal-body {
 		width: calc(100vw - 25px);

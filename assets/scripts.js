@@ -61,20 +61,6 @@ const modal = document.getElementById("modal")
 const myDiv = document.querySelector('.modal-dialog')
 let categorySelected = "all"
 
-//Pause carousel
-// document.querySelector(".carousel-btn.btn-pause").addEventListener("click", function() {
-//     $('.carousel').carousel("pause")
-//     this.classList.add("btn-hidden")
-//     document.querySelector(".carousel-btn.btn-play").classList.remove("btn-hidden")
-// })
-
-//Active carousel
-// document.querySelector(".carousel-btn.btn-play").addEventListener("click", function() {
-//     $('.carousel').carousel("cycle")
-//     this.classList.add("btn-hidden")
-//     document.querySelector(".carousel-btn.btn-pause").classList.remove("btn-hidden")
-// })
-
 //Add list of categories
 for(let category of categories) {
     list.innerHTML += `<li class="nav-item active">
