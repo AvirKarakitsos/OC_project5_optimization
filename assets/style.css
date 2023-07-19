@@ -71,35 +71,6 @@ body {
 	aspect-ratio: 425 / 196;
 }
 
-.carousel-btn {
-	height: 30px;
-	width: 30px;
-	margin-right: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 0;
-	border-radius: 50%;
-	background-color: #1C647466;
-}
-
-.carousel-btn:hover {
-	background-color: #1C6474E6;
-}
-
-.carousel-btn:focus {
-	outline: 0;
-	background-color: #1C6474E6;
-}
-
-.carousel-btn.btn-hidden {
-	display: none;
-}
-.carousel-btn .fa-pause, .carousel-btn .fa-play {
-	font-size: 18px;
-	color: #fff;
-}
-
 /** About **/
 #about {
 	display: flex;
